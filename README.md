@@ -1,10 +1,10 @@
-# PoragS-Awesome-React-BookStore
+# PoragS-Awesome-React-Bookstore
 <a name="readme-top"></a>
 
 <div align="center">
   <img src="./porag-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
-  <h3><b>The Awesome React BookStore</b></h3>
+  <h3><b>The Awesome React Bookstore</b></h3>
   <h5>"The Awesome React BookStore" is a website build using REACT &amp; REDUX in context of a real app (with two subpages:  __/books &amp; __/categories) that allows to:  
   1. Display a list of books
   2. Add a book  
@@ -38,9 +38,9 @@
   - [📝 License ](#-license-)
 
 
-# 📖 The Math magicians<a name="about-project"></a>
+# 📖 The Awesome React Bookstore<a name="about-project"></a>
 
-"The Awesome React BookStore" is a website build using REACT &amp; REDUX in context of a real app (with two subpages:  __/books &amp; __/categories) that allows to:  
+"The Awesome React Bookstore" is a website build using REACT &amp; REDUX in context of a real app (with two subpages:  __/books &amp; __/categories) that allows to:  
   1. Display a list of books
   2. Add a book  
   3. Remove a selected book.
