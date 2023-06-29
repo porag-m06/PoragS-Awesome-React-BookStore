@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/features/books/booksSlice';
 
-function AddBook({ books, onAddBook }) {
+function AddBook({ books }) {
   const [bookTitle, setBookTitle] = useState('');
   const [bookAuthor, setBookAuthor] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onAddBook({
-      id: books.length + 1,
+    dispatch(addBook({
+      id: `item${books.length + 1}`,
       category: 'n/a',
       title: bookTitle,
       author: bookAuthor,
-    });
+    }));
+
     setBookTitle('');
     setBookAuthor('');
   };
@@ -45,13 +49,12 @@ function AddBook({ books, onAddBook }) {
 AddBook.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  onAddBook: PropTypes.func.isRequired,
 };
 
 export default AddBook;
