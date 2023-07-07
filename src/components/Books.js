@@ -9,7 +9,7 @@ function Books() {
   useEffect(() => { dispatch(fetchBooks()); }, [dispatch]);
 
   const { books, isLoading, error } = useSelector((storeState) => storeState.books);
-  const booksAsList = Object.keys(books).map((key) => books[key][0]);
+  const booksAsList = Object.keys(books).map((key) => ({ ...books[key][0], id: key }));
   const list = booksAsList.map((book) => (<li key={book.id}><Book book={book} /></li>));
 
   if (isLoading) {
