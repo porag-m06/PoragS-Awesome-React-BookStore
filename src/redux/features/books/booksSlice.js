@@ -42,7 +42,6 @@ export const booksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
-        // console.log('fulfilled', action.payload);
         state.isLoading = false;
         state.books = action.payload;
       })

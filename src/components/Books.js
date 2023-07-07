@@ -6,22 +6,11 @@ import { fetchBooks } from '../redux/features/books/booksSlice';
 
 function Books() {
   const dispatch = useDispatch();
-  useEffect(() => { dispatch(fetchBooks()); }, [dispatch, fetchBooks]);
+  useEffect(() => { dispatch(fetchBooks()); }, [dispatch]);
 
   const { books, isLoading, error } = useSelector((storeState) => storeState.books);
-  const bookList = Object.keys(books).map((key) => books[key][0]);
-  console.log('the book list: ', bookList);
-  // const list = Object.keys(books).map(
-  //   (key) => (
-  //     <li key={key}>
-  //       <Book book={books[key][0]} />
-  //       {' '}
-  //     </li>
-  //   ),
-  // );
-
-  const list = bookList.map((book) => (<li key={book.id}><Book book={book} /></li>));
-  // const list = bookList.map((book) => (<li key={book.id}><Book book={book} /></li>));
+  const booksAsList = Object.keys(books).map((key) => books[key][0]);
+  const list = booksAsList.map((book) => (<li key={book.id}><Book book={book} /></li>));
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -35,7 +24,7 @@ function Books() {
     <div>
       <h1>Book List: </h1>
       <ul>{list}</ul>
-      <AddBook books={books} />
+      <AddBook books={booksAsList} />
     </div>
   );
 }
