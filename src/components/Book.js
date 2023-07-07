@@ -10,14 +10,14 @@ function Book({ book }) {
       <h5>{book.category}</h5>
       <h2>{book.title}</h2>
       <h4>{book.author}</h4>
-      <button type="button" onClick={() => { dispatch(removeBook(book.id)); }}>Delete</button>
+      <button type="button" onClick={() => { dispatch(removeBook(book.item_id)); }}>Delete</button>
     </>
   );
 }
 
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,

@@ -9,8 +9,8 @@ function Books() {
   useEffect(() => { dispatch(fetchBooks()); }, [dispatch]);
 
   const { books, isLoading, error } = useSelector((storeState) => storeState.books);
-  const booksAsList = Object.keys(books).map((key) => ({ ...books[key][0], id: key }));
-  const list = booksAsList.map((book) => (<li key={book.id}><Book book={book} /></li>));
+  const booksAsList = Object.keys(books).map((key) => ({ ...books[key][0], item_id: key }));
+  const list = booksAsList.map((book) => (<li key={book.item_id}><Book book={book} /></li>));
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -24,7 +24,7 @@ function Books() {
     <div>
       <h1>Book List: </h1>
       <ul>{list}</ul>
-      <AddBook books={booksAsList} />
+      <AddBook />
     </div>
   );
 }

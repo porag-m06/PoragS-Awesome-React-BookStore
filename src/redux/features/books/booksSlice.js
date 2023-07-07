@@ -16,8 +16,21 @@ export const fetchBooks = createAsyncThunk(
   },
 );
 
+export const addBook = createAsyncThunk(
+  'books/addBook',
+  async (book, thunkAPI) => {
+    try {
+      await axios.post(baseURL, book);
+      const response = await thunkAPI.dispatch(fetchBooks());
+      return response.payload;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('Something went wrong...!!!');
+    }
+  },
+);
+
 const initialState = {
-  books: { },
+  books: {},
   isLoading: false,
   error: undefined,
 };
@@ -26,9 +39,6 @@ export const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: (state, action) => {
-      state.books.push(action.payload);
-    },
     removeBook: (state, action) => {
       const index = state.books.findIndex((book) => book.id === action.payload);
       if (index !== -1) {
@@ -49,8 +59,12 @@ export const booksSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       });
+
+    builder.addCase(addBook.fulfilled, (state, action) => {
+      state.books = action.payload;
+    });
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
+export const { removeBook } = booksSlice.actions;
 export default booksSlice.reducer;
