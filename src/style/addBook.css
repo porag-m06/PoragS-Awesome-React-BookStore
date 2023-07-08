@@ -36,6 +36,7 @@ form button {
   letter-spacing: 0.5px;
   text-align: center;
   font-family: 'Roboto Slab', serif;
+  cursor: pointer;
 }
 
 .title {
@@ -48,4 +49,10 @@ form button {
 
 .category {
   width: 18%;
+  padding-left: 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
 }

@@ -44,13 +44,34 @@ function AddBook() {
           onChange={(e) => setBookAuthor(e.target.value)}
         />
 
-        <input
+        {/* <input
           type="text"
           placeholder="Category"
           className="category"
           value={bookCategory}
           onChange={(e) => setBookCategory(e.target.value)}
-        />
+        /> */}
+
+        <select
+          className="category"
+          value={bookCategory}
+          onChange={(e) => setBookCategory(e.target.value)}
+          required
+        >
+          <option value="">--Select--</option>
+          <option value="Action" key="Action">Action</option>
+          <option value="Arts" key="Arts">Arts</option>
+          <option value="Economy" key="Economy">Economy</option>
+          <option value="Geography" key="Geography">Geography</option>
+          <option value="History" key="History">History</option>
+          <option value="Literature" key="Literature">Literature</option>
+          <option value="Mathematics" key="Mathematics">Mathematics</option>
+          <option value="Philosophy" key="Philosophy">Philosophy</option>
+          <option value="Science Fection" key="Science Fection">Science Fection</option>
+          <option value="Religion" key="Religion">Religion</option>
+          <option value="Science" key="Science">Science</option>
+          <option value="Other" key="Other">Other</option>
+        </select>
 
         <button type="submit">ADD BOOK</button>
 

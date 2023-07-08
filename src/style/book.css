@@ -59,6 +59,7 @@
   font-weight: 300;
   color: #4386bf;
   font-family: 'Roboto Slab', serif;
+  cursor: pointer;
 }
 
 .Line-2 {
@@ -105,4 +106,5 @@
   letter-spacing: 0.5px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
