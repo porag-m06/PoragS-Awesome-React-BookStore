@@ -28,13 +28,12 @@
 .nav-items {
   padding: 0;
   display: flex;
-  list-style-type: none;
+  list-style: none;
   gap: 2.563rem;
 }
 
 .nav-items li a {
   text-decoration: none;
-  width: 3.688rem;
   height: 1rem;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.813rem;
