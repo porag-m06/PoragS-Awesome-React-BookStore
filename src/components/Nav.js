@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/nav.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Nav() {
   return (
@@ -8,8 +8,8 @@ function Nav() {
       <div className="nav">
         <p>Bookstore CMS</p>
         <ul className="nav-items">
-          <li className="nav-link"><Link to="/">BOOKS</Link></li>
-          <li className="nav-link"><Link to="/categories">CATEGORIES</Link></li>
+          <li className="nav-link"><NavLink to="/">BOOKS</NavLink></li>
+          <li className="nav-link"><NavLink to="/categories">CATEGORIES</NavLink></li>
         </ul>
       </div>
     </header>
