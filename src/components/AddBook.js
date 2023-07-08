@@ -30,6 +30,7 @@ function AddBook() {
 
         <input
           type="text"
+          required
           placeholder="Book Title"
           className="title"
           value={bookTitle}
@@ -38,19 +39,12 @@ function AddBook() {
 
         <input
           type="text"
+          required
           placeholder="Author"
           className="author"
           value={bookAuthor}
           onChange={(e) => setBookAuthor(e.target.value)}
         />
-
-        {/* <input
-          type="text"
-          placeholder="Category"
-          className="category"
-          value={bookCategory}
-          onChange={(e) => setBookCategory(e.target.value)}
-        /> */}
 
         <select
           className="category"
