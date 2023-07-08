@@ -1,3 +1,4 @@
+import '../style/books.css';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
@@ -22,8 +23,7 @@ function Books() {
 
   return (
     <div>
-      <h1>Book List: </h1>
-      <ul>{list}</ul>
+      <ul className="books-ul">{list}</ul>
       <AddBook />
     </div>
   );
